@@ -1,4 +1,8 @@
 - name: List all VMs
-  community.libvirt.virt:
-    command: list_vms
-    uri: "qemu://{{ kvm_host }}/system"
+  hosts: all
+
+  tasks:
+  - name: List all VMs
+    community.libvirt.virt:
+      command: list_vms
+      uri: "qemu://{{ kvm_host }}/system"
